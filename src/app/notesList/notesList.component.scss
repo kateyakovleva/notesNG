@@ -1,0 +1,49 @@
+.tabs {
+
+  .tab-buttons {
+    width: 35%;
+    justify-content: space-between;
+
+    button {
+      width: 30%;
+      cursor: pointer;
+      font-size: 16px;
+      color: #5e5e5e;
+
+      &.active {
+        background-color: #f1f1f1;
+        color: #000000;
+      }
+    }
+  }
+}
+
+  .button-add-more {
+    z-index: 9999;
+    top: -30px;
+    position: relative;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    background-color: darkorange;
+    cursor: pointer;
+
+    &:after {
+      font-size: 50px;
+      color: #f1f1f1;
+      content: '+';
+      font-weight: 500;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+
+
+
+
+
+
+

@@ -1,0 +1,14 @@
+<table class="table-content">
+  <thead>
+  <tr>
+    <td>Заголовок</td>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let note of getNotes()">
+    <td>
+      <a [routerLink]="note.id">{{ note.heading }}</a>
+    </td>
+  </tr>
+  </tbody>
+</table>

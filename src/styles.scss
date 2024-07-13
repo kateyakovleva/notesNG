@@ -1,1 +1,64 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  margin: 0;
+  letter-spacing: 0.02em;
+  color: #000000;
+  font-family: Arial, sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+}
+
+input, textarea {
+  padding: 0;
+  outline: none;
+  border: none;
+  background-color: transparent;
+
+  &::placeholder {
+    color: #5e5e5e !important;
+    font-size: 25px;
+    font-weight: lighter;
+  }
+}
+
+.item-form {
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.w-70 {
+  width: 70%;
+}
+
+.m-20 {
+  margin: 20px 0;
+}
+
+.background-white {
+  background-color: #f1f1f1;
+}
+
+.border-bottom {
+  border-bottom: 1px solid #000000;
+}
+
+.title {
+  font-weight: lighter;
+  font-size: 30px;
+}
+
+.container-button {
+  width: 69%;
+  justify-content: end;
+}

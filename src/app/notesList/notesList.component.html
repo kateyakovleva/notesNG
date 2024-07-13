@@ -1,0 +1,34 @@
+<h1 class="title">Заметки</h1>
+<div class="tabs w-70">
+  <div class="tab-buttons d-flex m-20">
+    <button class="item-form" *ngFor="let tab of tabs; let i = index"
+            (click)="setActiveTab(i)"
+            [class.active]="activeTab === i">
+      {{ tab.title }}
+    </button>
+  </div>
+
+  <div class="tab-content item-form background-white">
+    <ng-container *ngFor="let tab of tabs; let i = index">
+      <ng-container *ngIf="activeTab === i">
+        <ng-container *ngTemplateOutlet="tabContent; context: { content: tab.content }"></ng-container>
+      </ng-container>
+    </ng-container>
+  </div>
+</div>
+
+<ng-template #tabContent let-content="content">
+  <div>
+    {{ content }}
+    <app-content/>
+  </div>
+</ng-template>
+
+  <div class="container-button d-flex">
+    <a routerLink="create_note" class="button-add-more"></a>
+  </div>
+
+
+
+
+

@@ -1,0 +1,12 @@
+<form class="w-70 d-flex container" (ngSubmit)="submit($event)">
+  <input placeholder='{{note?.heading}}'
+         name="heading"
+         class="m-20 border-bottom"/>
+  <label class="">дата создания</label>
+  <textarea name="description"
+            class="m-20 border-bottom">{{note?.description}}
+  </textarea>
+  <div class="d-flex container-button">
+    <button class="button-add-note"></button>
+  </div>
+</form>

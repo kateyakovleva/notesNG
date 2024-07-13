@@ -1,0 +1,50 @@
+.container {
+  flex-direction: column;
+
+  label {
+    font-size: 12px;
+  }
+
+  input {
+    width: 50%;
+    height: 70px;
+    font-size: 25px;
+  }
+
+  textarea {
+    margin: 40px 0;
+    width: 60%;
+    min-height: 100px;
+
+    &::placeholder {
+      color: #5e5e5e !important;
+      font-size: 15px;
+      font-weight: lighter;
+    }
+  }
+
+  .container-button {
+    width: 60.5%;
+
+    .button-add-note {
+      z-index: 9999;
+      position: relative;
+      border-radius: 50%;
+      width: 80px;
+      height: 80px;
+      background-color: #00b358;
+      cursor: pointer;
+
+      &:after {
+        font-size: 50px;
+        color: #f1f1f1;
+        content: '✓';
+        font-weight: 500;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+}

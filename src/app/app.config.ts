@@ -1,8 +1,13 @@
-import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
-import { provideRouter } from '@angular/router';
+import { ApplicationConfig } from '@angular/core';
+import {provideRouter, Routes} from '@angular/router';
+import {NotesListComponent} from './notesList/notesList.component';
+import {CreateNoteComponent} from "./createNote/createNote.component";
 
-import { routes } from './app.routes';
+const appRoutes: Routes = [
+  {path: "", component: NotesListComponent},
+  {path: "create_note", component: CreateNoteComponent}
+];
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes)]
+  providers: [provideRouter(appRoutes)]
 };
