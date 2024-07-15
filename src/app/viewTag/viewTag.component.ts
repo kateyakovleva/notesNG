@@ -1,9 +1,9 @@
 import {Component} from "@angular/core";
-import {INote} from "../types/notes";
 import {ActivatedRoute, Router} from "@angular/router";
-import {createNote, getNote, saveNote} from "../services/notes";
 import {convertFormDataToObject} from "../services/utils";
 import {FormsModule} from "@angular/forms";
+import {ITag} from "../types/tags";
+import {getTag, saveTag} from "../services/tags";
 
 @Component({
   selector: "app-viewNote",
@@ -11,17 +11,17 @@ import {FormsModule} from "@angular/forms";
   imports: [
     FormsModule
   ],
-  templateUrl: './viewNote.component.html',
+  templateUrl: './viewTag.component.html',
   styleUrls: ['../createNote/createNote.component.scss', '../app.component.scss']
 })
 
-export class ViewNoteComponent {
+export class ViewTagComponent {
 
-  note?: INote;
+  tag?: ITag;
 
   constructor(private router: Router, route: ActivatedRoute) {
     route.params.subscribe((params) => {
-      this.note = getNote(params["id"]);
+      this.tag = getTag(params["id"]);
     });
   }
 
@@ -31,10 +31,10 @@ export class ViewNoteComponent {
     // const target: HTMLFormElement = <HTMLFormElement>event.target;
     // создаем экземпляр класса с данными из формы
     const data = new FormData(event.target as HTMLFormElement);
-    const tempNote = convertFormDataToObject<INote>(data);
+    const tempTag = convertFormDataToObject<ITag>(data);
     //note - старые данные, tempNote - новые данные. нам нужно это сравнение для корректной работы saveNote, которая найдет нужный id и перезапишет данные
-    if(this.note?.id) tempNote.id = this.note.id;
-    saveNote(tempNote);
+    if(this.tag?.id) tempTag.id = this.tag.id;
+    saveTag(tempTag);
 
     this.router.navigate(['']).then();
   }

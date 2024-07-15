@@ -3,7 +3,8 @@ import {Router} from "@angular/router";
 import {createNote} from "../services/notes";
 import {convertFormDataToObject} from "../services/utils";
 import {FormsModule} from "@angular/forms";
-import {INote} from "../types/notes";
+import {ITag} from "../types/tags";
+import {createTag} from "../services/tags";
 
 @Component({
   selector: "app-createNote",
@@ -11,19 +12,20 @@ import {INote} from "../types/notes";
   imports: [
     FormsModule
   ],
-  templateUrl: './createNote.component.html',
-  styleUrls: ['./createNote.component.scss', '../app.component.scss']
+  templateUrl: './createTag.component.html',
+  styleUrls: ['./createTag.component.scss', '../app.component.scss']
 })
 
-export class CreateNoteComponent {
+export class CreateTagComponent {
   constructor(private router: Router) {}
 
   submit(event: SubmitEvent) {
     event.preventDefault();
     const target: HTMLFormElement = <HTMLFormElement>event.target;
     const data = new FormData(target);
-    const tempNote = convertFormDataToObject<INote>(data);
-    const note = createNote(tempNote);
+    const tempTag = convertFormDataToObject<ITag>(data);
+
+    const tag = createTag(tempTag);
 
     this.router.navigate(['']).then();
   }

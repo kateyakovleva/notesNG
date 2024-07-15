@@ -1,31 +1,17 @@
 .container {
-  flex-direction: column;
+  flex-direction: row;
 
-  label {
-    font-size: 12px;
-  }
+  .container-content {
+    justify-content: space-between;
 
-  input {
-    width: 50%;
-    height: 70px;
-    font-size: 25px;
-  }
-
-  textarea {
-    margin: 40px 0;
-    width: 60%;
-    min-height: 100px;
-    font-size: 20px;
-
-    &::placeholder {
-      color: #5e5e5e !important;
-      font-size: 20px;
-      font-weight: lighter;
+    .input-style {
+      height: 70px;
+      font-size: 25px;
     }
   }
 
   .container-button {
-    width: 60.5%;
+    width: 20%;
 
     .button-add-note {
       z-index: 9999;

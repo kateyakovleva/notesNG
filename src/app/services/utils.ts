@@ -1,11 +1,11 @@
-import {INote} from "../types/notes";
 
-export const convertFormDataToObject = (data: FormData):INote => {
-  let note: Partial<INote> = {};
+export const convertFormDataToObject = <T>(data: FormData):T => {
+  //делаем все св-ва необязательными, потому что у нас есть id в интерфейсе, а с formData id не приходит.
+  let note: Partial<T> = {};
 
   data.forEach((value, key ) => {
-    note[ key as(keyof INote) ] = value as INote[keyof INote];
+    note[ key as(keyof T) ] = value as T[keyof T];
   })
 
-  return note as INote;
+  return note as T;
 }

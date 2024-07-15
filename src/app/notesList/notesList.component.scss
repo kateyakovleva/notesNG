@@ -1,7 +1,7 @@
 .tabs {
 
   .tab-buttons {
-    width: 35%;
+    width: 40%;
     justify-content: space-between;
 
     button {
@@ -18,27 +18,9 @@
   }
 }
 
-  .button-add-more {
-    z-index: 9999;
-    top: -30px;
-    position: relative;
-    border-radius: 50%;
-    width: 80px;
-    height: 80px;
-    background-color: darkorange;
-    cursor: pointer;
 
-    &:after {
-      font-size: 50px;
-      color: #f1f1f1;
-      content: '+';
-      font-weight: 500;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
-  }
+
+
 
 
 

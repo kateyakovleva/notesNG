@@ -8,7 +8,7 @@
     </button>
   </div>
 
-  <div class="tab-content item-form background-white">
+  <div class="tab-content item-form">
     <ng-container *ngFor="let tab of tabs; let i = index">
       <ng-container *ngIf="activeTab === i">
         <ng-container *ngTemplateOutlet="tabContent; context: { content: tab.content }"></ng-container>
@@ -19,14 +19,10 @@
 
 <ng-template #tabContent let-content="content">
   <div>
-    {{ content }}
-    <app-content/>
+    <ng-container *ngComponentOutlet="content"></ng-container>
   </div>
 </ng-template>
 
-  <div class="container-button d-flex">
-    <a routerLink="create_note" class="button-add-more"></a>
-  </div>
 
 
 

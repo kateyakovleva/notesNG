@@ -20,6 +20,13 @@ export const saveNote = (note: INote) => {
   post('noteList', notes);
 }
 
+export const removeNote = (id: string) => {
+  let notes = getNotes();
+  notes = notes.filter((_note: INote) => id !== _note.id);
+
+  post('noteList', notes);
+}
+
 export const createNote = (note: INote): INote => {
   note.id = Date.now().toString();
 

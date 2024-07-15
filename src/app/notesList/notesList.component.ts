@@ -1,7 +1,9 @@
 import {Component} from "@angular/core";
-import {NgForOf, NgIf, NgTemplateOutlet} from "@angular/common";
+import {NgComponentOutlet, NgForOf, NgIf, NgTemplateOutlet} from "@angular/common";
 import {RouterLink} from "@angular/router";
-import {ContentComponent} from "../content/content.component";
+import {NoteComponent} from "../contentNotes/note.component";
+import {ReminderComponent} from "../contentReminder/reminder.component";
+import {TagComponent} from "../contentTags/tag.component";
 
 @Component({
   selector: "app-notesList",
@@ -11,7 +13,8 @@ import {ContentComponent} from "../content/content.component";
     NgForOf,
     NgTemplateOutlet,
     RouterLink,
-    ContentComponent
+    NoteComponent,
+    NgComponentOutlet
   ],
   templateUrl: './notesList.component.html',
   styleUrls: ['./notesList.component.scss', '../app.component.scss']
@@ -22,9 +25,9 @@ export class NotesListComponent {
   activeTab = 0;
 
   tabs = [
-    { title: 'Заметки', content: 'Content of Tab 1' },
-    { title: 'Напоминания', content: 'Content of Tab 2' },
-    { title: 'Теги', content: 'Content of Tab 3' }
+    { title: 'Заметки', content: NoteComponent },
+    { title: 'Напоминания', content: ReminderComponent },
+    { title: 'Теги', content: TagComponent }
   ];
 
   setActiveTab(i: number) {

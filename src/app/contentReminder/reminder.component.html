@@ -1,0 +1,13 @@
+<div class="content d-flex">
+  <div class="content-title border-bottom m-20">Заголовок</div>
+  <div class="content-container d-flex">
+    <div class="content-item d-flex background-white item-form m-10" *ngFor="let reminder of getReminders()">
+      <a [routerLink]="'view_reminder/' + reminder.id">{{ reminder.title }}</a>
+      <div class="">{{reminder.date}}</div>
+      <div class="">{{getNoteHeading(reminder.note_id)}}</div>
+    </div>
+  </div>
+  <div class="container-button d-flex">
+    <a routerLink="create_reminder" class="button-add-more"></a>
+  </div>
+</div>
