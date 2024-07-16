@@ -3,12 +3,12 @@
   <div class="content-container d-flex">
     <div class="content-item d-flex background-white item-form m-10" *ngFor="let tag of getTags()">
       <div class="d-flex column">
-        <a [routerLink]="'view_tags/' + tag.id">{{ tag.name }}</a>
+        <a [routerLink]="'/view_tags/' + tag.id">{{ tag.name }}</a>
       </div>
       <button (click)="removeField(tag.id)" class="button-delete"></button>
     </div>
   </div>
   <div class="container-button d-flex">
-    <a routerLink="create_tag" class="button-add-more"></a>
+    <a routerLink="/create_tag" class="button-add-more"></a>
   </div>
 </div>

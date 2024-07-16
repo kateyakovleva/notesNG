@@ -1,17 +1,32 @@
 .container {
-  flex-direction: row;
+  flex-direction: column;
 
-  .container-content {
-    justify-content: space-between;
+  label {
+    font-size: 12px;
+  }
 
-    .input-style {
-      height: 70px;
-      font-size: 25px;
+  input {
+    width: 60%;
+    height: 70px;
+    font-size: 25px;
+  }
+
+  textarea {
+    margin: 40px 0;
+    width: 60%;
+    min-height: 100px;
+    font-size: 20px;
+
+    &::placeholder {
+      color: #5e5e5e !important;
+      font-size: 20px;
+      font-weight: lighter;
     }
   }
 
-  .container-button {
-    width: 20%;
+  .container-button-in-component {
+    justify-content: end;
+    width: 60.5%;
 
     .button-add-note {
       z-index: 9999;

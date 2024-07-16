@@ -1,18 +1,19 @@
-<div class="content d-flex">
+<div class="w-100 column d-flex ">
   <div class="content-title border-bottom m-20">Заголовок</div>
-  <div class="content-container d-flex">
+  <div class="w-100 column d-flex">
     <div class="content-item d-flex background-white item-form m-10" *ngFor="let note of getNotes()">
-      <div class="d-flex column">
-        <a [routerLink]="'view_notes/' + note.id">{{ note.heading }}</a>
-        <div class="d-flex row date m-10">
-          <img ngSrc="../images/alarm.svg" alt="" width="20" height="20"/>
+      <div class="d-flex column w-50">
+        <a class="color-black" [routerLink]="'/view_notes/' + note.id">{{ note.heading }}</a>
+        <div class="d-flex row date m-10 container-date w-40 m-10">
+          <img *ngIf="getReminderDate(note.id)" ngSrc="images/alarm.svg" alt="" width="20" height="20"/>
           {{getReminderDate(note.id)}}
         </div>
+        <div>{{getTags(note.tag_ids)}}</div>
       </div>
       <button (click)="removeField(note.id)" class="button-delete"></button>
     </div>
   </div>
   <div class="container-button d-flex">
-    <a routerLink="create_note" class="button-add-more"></a>
+    <a routerLink="/create_note" class="button-add-more"></a>
   </div>
 </div>

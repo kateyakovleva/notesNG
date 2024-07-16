@@ -1,0 +1,23 @@
+<form class="w-70 d-flex container" (ngSubmit)="submit($event)">
+  <input value='{{note?.heading}}'
+         placeholder="Напишите заголовок"
+         name="heading"
+         class="m-20 border-bottom"/>
+  <textarea placeholder="Начните ввод текста"
+            name="description"
+            class="m-20 border-bottom">{{note?.description}}</textarea>
+  <label>Выбрать теги</label>
+  <div class="w-30">
+    <ng-select
+      class="selector"
+      multiple
+      [items]="tags"
+      [ngModel]="selected"
+      (change)="itemSelect($event)"
+      [ngModelOptions]="{standalone: true}"
+    ></ng-select>
+  </div>
+  <div class="d-flex container-button-in-component">
+    <button class="button-add-note"></button>
+  </div>
+</form>

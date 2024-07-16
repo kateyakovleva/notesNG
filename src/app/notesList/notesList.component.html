@@ -1,27 +1,14 @@
 <h1 class="title">Заметки</h1>
 <div class="tabs w-70">
   <div class="tab-buttons d-flex m-20">
-    <button class="item-form" *ngFor="let tab of tabs; let i = index"
-            (click)="setActiveTab(i)"
-            [class.active]="activeTab === i">
-      {{ tab.title }}
-    </button>
+    <a class="item-form" routerLink="/">Заметки</a>
+    <a class="item-form" routerLink="/reminder">Напоминания</a>
+    <a class="item-form" routerLink="/tags">Тэги</a>
   </div>
-
   <div class="tab-content item-form">
-    <ng-container *ngFor="let tab of tabs; let i = index">
-      <ng-container *ngIf="activeTab === i">
-        <ng-container *ngTemplateOutlet="tabContent; context: { content: tab.content }"></ng-container>
-      </ng-container>
-    </ng-container>
+    <router-outlet></router-outlet>
   </div>
 </div>
-
-<ng-template #tabContent let-content="content">
-  <div>
-    <ng-container *ngComponentOutlet="content"></ng-container>
-  </div>
-</ng-template>
 
 
 

@@ -1,75 +1,23 @@
-.content {
+
+.content-title {
+  padding-bottom: 20px;
   width: 100%;
-  flex-direction: column;
+}
 
-  .content-title {
-    padding-bottom: 20px;
-    width: 100%;
-  }
+.content-item {
+  width: 85%;
+  justify-content: space-between;
+}
 
-  .content-container {
-    width: 100%;
-    flex-direction: column;
+.container-date {
+  justify-content: space-between;
+  align-items: center;
 
-    .content-item {
-      width: 85%;
-      justify-content: space-between;
-    }
-
-    .date {
-      font-size: 14px;
-      font-weight: bold;
-    }
-
-    .button-delete {
-      display: inline-block;
-      z-index: 9999;
-      position: relative;
-      border-radius: 50%;
-      width: 30px;
-      height: 30px;
-      background-color: #ff3d00;
-      cursor: pointer;
-
-      &:after {
-        font-size: 20px;
-        color: #f1f1f1;
-        content: 'x';
-        position: absolute;
-        top: 45%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-      }
-    }
-  }
-
-  .container-button {
-    position: fixed;
-    top: 500px;
-    width: 63.5%;
-
-    .button-add-more {
-      z-index: 9999;
-      top: -30px;
-      position: relative;
-      border-radius: 50%;
-      width: 80px;
-      height: 80px;
-      background-color: darkorange;
-      cursor: pointer;
-
-      &:after {
-        font-size: 50px;
-        color: #f1f1f1;
-        content: '+';
-        font-weight: 500;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-      }
-    }
+  .date {
+    font-size: 14px;
+    font-weight: bold;
   }
 }
+
 
 

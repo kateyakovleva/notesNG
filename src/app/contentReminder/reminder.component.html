@@ -2,12 +2,13 @@
   <div class="content-title border-bottom m-20">Заголовок</div>
   <div class="content-container d-flex">
     <div class="content-item d-flex background-white item-form m-10" *ngFor="let reminder of getReminders()">
-      <a [routerLink]="'view_reminder/' + reminder.id">{{ reminder.title }}</a>
+      <a [routerLink]="'/view_reminder/' + reminder.id">{{ reminder.title || 'Без названия' }}</a>
       <div class="">{{reminder.date}}</div>
       <div class="">{{getNoteHeading(reminder.note_id)}}</div>
+      <button (click)="removeField(reminder.id)" class="button-delete"></button>
     </div>
   </div>
   <div class="container-button d-flex">
-    <a routerLink="create_reminder" class="button-add-more"></a>
+    <a routerLink="/create_reminder" class="button-add-more"></a>
   </div>
 </div>

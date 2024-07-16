@@ -1,0 +1,25 @@
+<form class="w-70 d-flex container" (ngSubmit)="submit($event)">
+  <input value='{{reminder?.title}}'
+         placeholder="Заголовок напоминания"
+         name="title"
+         class="m-20 border-bottom"/>
+  <input value='{{reminder?.date}}'
+         type="datetime-local"
+         name="date"
+         class="m-20 border-bottom"/>
+  <div class="w-30">
+    <ng-select
+      class="selector"
+      [inputAttrs]="{name: 'note_id'}"
+      [items]="notes"
+      (change)="itemSelect($event)"
+      [ngModel]="selected"
+      [ngModelOptions]="{standalone: true}"
+    ></ng-select>
+  </div>
+  <div class="d-flex container-button-in-component">
+    <button class="button-add-note"></button>
+  </div>
+</form>
+
+

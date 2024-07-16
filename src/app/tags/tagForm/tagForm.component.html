@@ -1,8 +1,9 @@
 <form class="w-70 d-flex container" (ngSubmit)="submit($event)">
   <input placeholder="Напишите название"
+         value='{{tag?.name}}'
          name="name"
          class="m-20 border-bottom"/>
-  <div class="d-flex container-button">
+  <div class="d-flex container-button-in-component">
     <button class="button-add-note"></button>
   </div>
 </form>
